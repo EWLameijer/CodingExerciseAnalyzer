@@ -5,6 +5,123 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f24469f8-9e00-44bf-afb9-69620ccaf7e8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/exercises/AddTwoBinaryNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/AltPairs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/AreaAndPerimeterOfCircle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/AreaAndPerimeterOfRectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/AreaOfHexagon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/AreaOfPolygon.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ArithmeticOperations.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Array123.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Array667.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ArrayCount9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ArrayFront9.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/AverageOfThreeNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/BackAround.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/BigJava.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/BinaryToDecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/BinaryToHexadecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/BinaryToOctal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CapitalizeEachWordInASentence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CheckIfNumberIsEvenOrOdd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Close10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CompareTwoNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CountFactors.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CountLettersSpacesNumbersAndOtherCharactersInString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CountXX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/CreateThreeDigitNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DecimalToBinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DecimalToHexadecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DecimalToOctal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DelDel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Diff21.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DisplayAmericanFlag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DisplayCurrentDateAndTimeInSpecifiedFormat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DisplayFileSize.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DisplayNumberPlusCopies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DisplayTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DistanceBetweenPointsOnSurfaceOfEarth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DivideTwoNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DivisibleByThreeOrFive.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DoubleArithmetic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DoubleArithmeticContinued.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/DoubleX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/EndUp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/EveryNth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/FakeAmericanGradingWithLambdas.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/FindDivisibleNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Front22.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Front3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/FrontBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/FrontTimes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Hangman.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Has271.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/HasTeen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/HelloName.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/HexadecimalToBinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/HexadecimalToDecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/HexadecimalToOctal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/IcyHot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/In2020.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/In3050.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/InputTwoNumbersAndDoArithmetic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/IntMax.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Last2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/LastDigit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/LoneTeen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Makes10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Max1020.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MissingChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MixStart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MonkeyTrouble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MostlyAscendingTriple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MultiplicationTableOfInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MultiplyInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/MultiplyTwoBinaryNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/NearHundred.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/NoTriples.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/NotString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/OctalToBinary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/OctalToDecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/OctalToHexadecimal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Or35.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ParrotTrouble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/PosNeg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/PrintAFace.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/PrintAsciiValueOfChar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/PrintOddNumbersFrom1To100.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/PrintTwinkleTwinkle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ReverseAString.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SameRightmostDigits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SecondsToHourMinutesAndSeconds.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ShowCharsets.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/ShowSystemData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Sleepin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/Snail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StartHi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StartOz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringBits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringE.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringMatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringSPlosion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringTimes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringToInt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/StringYak.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SumDouble.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SumOfDigits.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SumOfTwoIntegersEqualToAThirdInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SumOfTwoNumbers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercises/SwapTwoVariables.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ideas.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/FileSummary.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/InstructionWindow.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/OverviewWindow.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/SolutionWindow.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/StatusManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/StringUtils.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Tag.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
     </list>
@@ -18,11 +135,27 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="OptimizeOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2NkNPhwn9uM83IJFae6dCYgTMrN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -30,13 +163,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/development/ITvitae/tools/CodingExerciseAnalyzer&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "code.cleanup.on.save": "true",
+    "last_opened_file_path": "D:/Development/ITvitae/Tools/CodingExerciseAnalyzer/exercises",
+    "rearrange.code.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Development\ITvitae\Tools\CodingExerciseAnalyzer\exercises" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
@@ -72,5 +219,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="JetRunConfigurationType">
+        <watch expression="code" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

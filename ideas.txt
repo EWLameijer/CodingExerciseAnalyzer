@@ -1,0 +1,16 @@
+// 1. Bibliotheek van opgaven
+// 2. zorgen dat je kan zoeken op complexiteit en construct
+// 3. Zeg 4x opgaven maken, 1x display
+
+// MORGENOCHTEND: REVIEW DE CODE
+// probeer dan een executable te maken die op andere computers runt (eerst op de jouwe)
+// vul aan met extra oefeningen
+// DONDERDAG: probeer het uit op de Java-groep!!!
+
+// ideeën
+// misschien geel als je iets een dag eerder hebt geprobeerd en het toen is mislukt?
+// een Start-knop en invulveld waarmee je zelf je regels per uur kan inschatten?
+
+// IDEAAL:
+// uiteindelijk: zorg voor auto-tagging van oplossingen!
+// mogelijk ook McCabe complexiteit enzo?
