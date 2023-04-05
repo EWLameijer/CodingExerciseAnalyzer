@@ -17,7 +17,7 @@ fun main() {
 
 private fun updateExerciseStatus() {
     getExerciseStatuses().forEach { line ->
-        fileSummaries.find { line.startsWith(it.filename) }?.setCompletionStatus(line.endsWith("!"))
+        fileSummaries.find { line.startsWith(it.filename) }?.setCompletionStatus(line)
     }
 }
 

@@ -1,6 +1,12 @@
+import java.time.Duration
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+import java.time.temporal.TemporalUnit
+import kotlin.time.DurationUnit
+
 // Note: if this program gets bigger, an extra builder class may help for maintainability.
 
-enum class Status { NOT_YET_TRIED, RETRY, SUCCEEDED }
+enum class Status { NOT_YET_TRIED, INCUBATING, RETRY, SUCCEEDED }
 
 data class FileSummary(
     val filename: String,
@@ -44,10 +50,18 @@ data class FileSummary(
     override fun toString() = "filename: $filename, total: $total, blank: $blank, opening: $opening, " +
             "comments: $comments, code: $codeLines; $tags\n\n$description\n\n$code"
 
-    private var completionStatus = Status.NOT_YET_TRIED
-    
-    fun setCompletionStatus(completed: Boolean) {
-        completionStatus = if (completed) Status.SUCCEEDED else Status.RETRY
+    var completionStatus = Status.NOT_YET_TRIED
+
+    fun setCompletionStatus(line: String) {
+        completionStatus = if (line.endsWith("!")) Status.SUCCEEDED
+        else {
+            val dateTimePattern = "yyyy-MM-dd HH:mm"
+            val lastPractice = line.removeSuffix(",").takeLast(dateTimePattern.length)
+            val pattern = DateTimeFormatter.ofPattern(dateTimePattern)
+            val timeOfLastPractice = LocalDateTime.parse(lastPractice, pattern)
+            if (Duration.between(timeOfLastPractice, LocalDateTime.now()) > Duration.ofDays(1)) Status.RETRY
+            else Status.INCUBATING
+        }
     }
 
     fun completionStatus() = completionStatus

@@ -2,15 +2,15 @@ import java.awt.*
 import java.awt.event.ActionEvent
 import java.awt.event.MouseAdapter
 import java.awt.event.MouseEvent
-import javax.swing.JComboBox
-import javax.swing.JFrame
-import javax.swing.JScrollPane
-import javax.swing.JTable
+import javax.swing.*
 import javax.swing.table.DefaultTableModel
 import javax.swing.table.TableCellRenderer
 
+import Status.*
+
 class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
     private val exercises = mutableMapOf<Int, FileSummary>()
+    private val frameReference = this
 
     private val sortedFileSummaries = fileSummaries.sortedBy { it.codeLines }
 
@@ -40,11 +40,13 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
     private val maxBrightness = 255
     private val lightGreen = Color(tint, maxBrightness, tint)
     private val lightYellow = Color(maxBrightness, maxBrightness, tint)
+    private val lightBlue = Color(tint, tint, maxBrightness)
 
     private fun getStatusColor(row: Int): Color = when (exercises[row]?.completionStatus()) {
-        null, Status.NOT_YET_TRIED -> Color.WHITE
-        Status.SUCCEEDED -> lightGreen
-        Status.RETRY -> lightYellow
+        null, NOT_YET_TRIED -> Color.WHITE
+        INCUBATING -> lightBlue
+        RETRY -> lightYellow
+        SUCCEEDED -> lightGreen
     }
 
     fun String.htmlOfMaxLineLength(maxLineLength: Int): String {
@@ -64,12 +66,9 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
     }
 
     private fun updateTitle() {
-        val totalExercises = sortedFileSummaries.size
-        val completedExercises = sortedFileSummaries.count { it.completionStatus() == Status.SUCCEEDED }
-        val inTrainingExercises = sortedFileSummaries.count { it.completionStatus() == Status.RETRY }
-
-        title =
-            "$totalExercises exercises in total, $completedExercises completed, $inTrainingExercises being trained on"
+        val statusCounts = sortedFileSummaries.groupingBy { it.completionStatus() }.eachCount()
+        title = "${sortedFileSummaries.size} exercises in total, ${statusCounts[SUCCEEDED]} completed, " +
+                "${statusCounts[INCUBATING]} incubating, and ${statusCounts[RETRY]} being trained on"
     }
 
     fun updateTable(tagName: String) {
@@ -131,7 +130,12 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
                 val row = table.rowAtPoint(point)
                 if (mouseEvent.clickCount == 2 && table.selectedRow != -1) {
                     val key = table.getValueAt(row, 1) as String
-                    InstructionWindow(sortedFileSummaries.find { it.filename == key }!!)
+                    val fileSummary = sortedFileSummaries.find { it.filename == key }!!
+                    if (fileSummary.completionStatus() == INCUBATING) JOptionPane.showMessageDialog(
+                        frameReference,
+                        "Please allow this problem to incubate in your brain and try again tomorrow :)"
+                    )
+                    else InstructionWindow(fileSummary)
                 }
             }
         })
