@@ -8,6 +8,8 @@
 // DONDERDAG: probeer het uit op de Java-groep!!!
 
 // ideeën
+// geef in window title aan hoeveel exercises er zijn, hoeveel je afgerond hebt, en hoe vaak je geoefend hebt!
+// maak batch-file :)
 // misschien geel als je iets een dag eerder hebt geprobeerd en het toen is mislukt?
 // een Start-knop en invulveld waarmee je zelf je regels per uur kan inschatten?
 
