@@ -1,5 +1,6 @@
 import java.io.File
 
+const val statusFilename = "status.txt"
 val fileSummaries = mutableListOf<FileSummary>()
 
 var overview: OverviewWindow? = null
@@ -15,9 +16,14 @@ fun main() {
 }
 
 private fun updateExerciseStatus() {
-    File("status.txt").readLines().forEach { line ->
+    getExerciseStatuses().forEach { line ->
         fileSummaries.find { line.startsWith(it.filename) }?.setCompletionStatus(line.endsWith("!"))
     }
+}
+
+fun getExerciseStatuses(): List<String> {
+    val statusFile = File(statusFilename)
+    return if (statusFile.exists()) statusFile.readLines() else listOf()
 }
 
 fun updateOverview() {
@@ -56,16 +62,14 @@ private fun updateParseStatus(line: String, currentParseStatus: ParseStatus): Pa
     line.startsWith("// TAGS") -> ParseStatus.IN_TAGS
     line.startsWith("import") -> ParseStatus.REGULAR_PROGRAM_OPENING
     line.startsWith("/* DESCRIPTION") -> ParseStatus.IN_DESCRIPTION
-    line.trim().startsWith("*/") && currentParseStatus == ParseStatus.IN_DESCRIPTION ->
-        ParseStatus.AFTER_DESCRIPTION
+    line.trim().startsWith("*/") && currentParseStatus == ParseStatus.IN_DESCRIPTION -> ParseStatus.AFTER_DESCRIPTION
 
     else -> currentParseStatus
 }
 
 private fun addLineToReport(parseStatus: ParseStatus, line: String, report: FileSummary) {
     if (parseStatus == ParseStatus.IN_TAGS) {
-        line.removePrefix("// TAGS").split(" ", ",").filter { it.isNotBlank() && it.trim() != "//" }
-            .map(report::addTag)
+        line.removePrefix("// TAGS").split(" ", ",").filter { it.isNotBlank() && it.trim() != "//" }.map(report::addTag)
     } else if (parseStatus == ParseStatus.IN_DESCRIPTION) {
         if (!line.startsWith("/* DESCRIPTION")) {
             report.addDescriptionLine(line)

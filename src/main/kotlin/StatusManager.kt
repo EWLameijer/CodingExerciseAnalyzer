@@ -4,14 +4,13 @@ import java.time.format.DateTimeFormatter
 
 class StatusManager {
     companion object {
-        private const val statusFilename = "status.txt"
 
         fun updateDone(filename: String) {
             updateFileStatus(filename, "DONE")
         }
 
         private fun updateFileStatus(filename: String, status: String) {
-            val lines = if (File(statusFilename).exists()) File(statusFilename).readLines() else listOf()
+            val lines = getExerciseStatuses()
             val restOfLines = lines.filter { !it.startsWith(filename) }
             val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")
             val formatted = LocalDateTime.now().format(formatter)

@@ -39,12 +39,12 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
     private val tint = 200 // for soft background colors that enable reading the text easily
     private val maxBrightness = 255
     private val lightGreen = Color(tint, maxBrightness, tint)
-    private val lightRed = Color(maxBrightness, tint, tint)
+    private val lightYellow = Color(maxBrightness, maxBrightness, tint)
 
     private fun getStatusColor(row: Int): Color = when (exercises[row]?.completionStatus()) {
         null, Status.NOT_YET_TRIED -> Color.WHITE
         Status.SUCCEEDED -> lightGreen
-        Status.RETRY -> lightRed
+        Status.RETRY -> lightYellow
     }
 
     fun String.htmlOfMaxLineLength(maxLineLength: Int): String {
@@ -61,6 +61,15 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
             }
         }
         return "<html>$allLines</html>"
+    }
+
+    private fun updateTitle() {
+        val totalExercises = sortedFileSummaries.size
+        val completedExercises = sortedFileSummaries.count { it.completionStatus() == Status.SUCCEEDED }
+        val inTrainingExercises = sortedFileSummaries.count { it.completionStatus() == Status.RETRY }
+
+        title =
+            "$totalExercises exercises in total, $completedExercises completed, $inTrainingExercises being trained on"
     }
 
     fun updateTable(tagName: String) {
@@ -83,6 +92,7 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
             row++
         }
         table.model = tableModel
+        updateTitle()
     }
 
     class UnchangeableTableModel : DefaultTableModel() {
