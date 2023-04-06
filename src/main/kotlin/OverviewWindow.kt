@@ -67,8 +67,10 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
 
     private fun updateTitle() {
         val statusCounts = sortedFileSummaries.groupingBy { it.completionStatus() }.eachCount()
-        title = "${sortedFileSummaries.size} exercises in total, ${statusCounts[SUCCEEDED]} completed, " +
-                "${statusCounts[INCUBATING]} incubating, and ${statusCounts[RETRY]} being trained on"
+        fun counts(status: Status) = statusCounts[status] ?: 0
+
+        title = "${sortedFileSummaries.size} exercises in total, ${counts(SUCCEEDED)} completed, " +
+                "${counts(INCUBATING)} incubating, and ${counts(RETRY)} being trained on"
     }
 
     fun updateTable(tagName: String) {

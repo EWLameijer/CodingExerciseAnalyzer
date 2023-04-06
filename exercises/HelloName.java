@@ -1,6 +1,6 @@
 package exercises;
 
-// TAGS System.out.println
+// TAGS System.out.println()
 
 /* DESCRIPTION
 https://www.w3resource.com/java-exercises/basic/index.php

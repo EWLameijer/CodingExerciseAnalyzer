@@ -63,7 +63,6 @@ private fun updateParseStatus(line: String, currentParseStatus: ParseStatus): Pa
     line.startsWith("import") -> ParseStatus.REGULAR_PROGRAM_OPENING
     line.startsWith("/* DESCRIPTION") -> ParseStatus.IN_DESCRIPTION
     line.trim().startsWith("*/") && currentParseStatus == ParseStatus.IN_DESCRIPTION -> ParseStatus.AFTER_DESCRIPTION
-
     else -> currentParseStatus
 }
 
