@@ -15,7 +15,6 @@ Perimeter is 2 * (5.6 + 8.5) = 28.20
 
 public class AreaAndPerimeterOfRectangle {
     public static void main(String[] strings) {
-
         final double width = 5.6;
         final double height = 8.5;
 

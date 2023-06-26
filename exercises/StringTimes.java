@@ -18,11 +18,6 @@ public class StringTimes {
     }
 
     private static String stringTimes(String text, int numberOfTimes) {
-        String result = "";
-        for (int i = 0; i < numberOfTimes; i++) {
-            result = result + text;  // could use += here.
-            // or a StringBuilder: StringBuilder result = new StringBuilder(); .. result.append(text)... return result.toString();
-        }
-        return result;
+        return text.repeat(numberOfTimes);
     }
 }
