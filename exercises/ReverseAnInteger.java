@@ -25,5 +25,11 @@ public class ReverseAnInteger {
         }
 
         System.out.println(rev);
+
+        /* Note: you can also simply do this by reading a string and reversing that...
+        String text = scanner.nextLine();
+        StringBuilder stringBuilder = new StringBuilder(text);
+        System.out.println(stringBuilder.reverse());
+         */
     }
 }

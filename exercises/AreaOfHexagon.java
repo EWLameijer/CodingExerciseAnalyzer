@@ -24,6 +24,6 @@ public class AreaOfHexagon {
     }
 
     public static double hexagonArea(double side) {
-        return (6 * (side * side)) / (4 * Math.tan(Math.PI / 6));
+        return 3 * Math.sqrt(3) * side * side / 2;
     }
 }
