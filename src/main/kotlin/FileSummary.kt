@@ -1,8 +1,6 @@
 import java.time.Duration
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.time.temporal.TemporalUnit
-import kotlin.time.DurationUnit
 
 // Note: if this program gets bigger, an extra builder class may help for maintainability.
 

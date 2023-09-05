@@ -7,6 +7,19 @@ import javax.swing.table.DefaultTableModel
 import javax.swing.table.TableCellRenderer
 
 import Status.*
+import javax.swing.event.DocumentEvent
+import javax.swing.event.DocumentListener
+
+class DelegatingDocumentListener(private val handler: () -> Unit) : DocumentListener {
+
+    private fun processUpdate() = handler()
+
+    override fun changedUpdate(arg0: DocumentEvent) = processUpdate()
+
+    override fun insertUpdate(arg0: DocumentEvent) = processUpdate()
+
+    override fun removeUpdate(arg0: DocumentEvent) = processUpdate()
+}
 
 class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
     private val exercises = mutableMapOf<Int, FileSummary>()
@@ -80,7 +93,12 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
         tableModel.addColumn("techniques")
         tableModel.addColumn("instructions")
         var row = 0
-        sortedFileSummaries.filter { tagName == "ANY" || tagName in it.tagNames() }.forEach {
+        sortedFileSummaries.filter {
+            it.filename.contains(
+                searchBox.text,
+                true
+            ) && (tagName == "ANY" || tagName in it.tagNames())
+        }.forEach {
             tableModel.addRow(
                 arrayOf(
                     it.codeLines,
@@ -105,7 +123,9 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
 
     private val scrollPane = JScrollPane(table)
 
-    private val dropdownConstraints = GridBagConstraints().apply {
+    private val searchText = JLabel("Search for name that includes:")
+
+    private val searchTextConstraints = GridBagConstraints().apply {
         gridx = 0
         gridy = 0
         weightx = 1.0
@@ -114,9 +134,35 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
         fill = GridBagConstraints.BOTH
     }
 
-    private val tableConstraints = GridBagConstraints().apply {
+    private val searchFieldListener = DelegatingDocumentListener { updateTable(dropDown.selectedItem!!.toString()) }
+
+    private val searchBox = JTextField().apply {
+        document.addDocumentListener(searchFieldListener)
+    }
+
+    private val searchBoxConstraints = GridBagConstraints().apply {
+        gridx = 1
+        gridy = 0
+        weightx = 1.0
+        weighty = 1.0
+        insets = Insets(0, 0, 0, 0)
+        fill = GridBagConstraints.BOTH
+    }
+
+    private val dropdownConstraints = GridBagConstraints().apply {
         gridx = 0
         gridy = 1
+        gridwidth = 2
+        weightx = 1.0
+        weighty = 1.0
+        insets = Insets(0, 0, 0, 0)
+        fill = GridBagConstraints.BOTH
+    }
+
+    private val tableConstraints = GridBagConstraints().apply {
+        gridx = 0
+        gridy = 2
+        gridwidth = 2
         weightx = 1.0
         weighty = 1000.0
         insets = Insets(0, 0, 0, 0)
@@ -156,6 +202,8 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
 
     init {
         layout = GridBagLayout()
+        add(searchText, searchTextConstraints)
+        add(searchBox, searchBoxConstraints)
         add(dropDown, dropdownConstraints)
         add(scrollPane, tableConstraints)
         size = Dimension(1000, 800)

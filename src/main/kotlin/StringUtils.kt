@@ -1,6 +1,6 @@
 fun String.lineLengthLimited(maxLineWidth: Int): String {
     fun toLines(text: String): List<String> {
-        if (text.length <= maxLineWidth) return listOf(text)
+        if (text.length <= maxLineWidth) return listOf(text.trim())
         val (firstLine, remainder) = splitBeforeIndex(text, maxLineWidth)
         return listOf(firstLine) + toLines(remainder)
     }
@@ -8,13 +8,13 @@ fun String.lineLengthLimited(maxLineWidth: Int): String {
 }
 
 fun splitBeforeIndex(text: String, width: Int): Pair<String, String> {
-    val candidateFirstPart = text.take(width).dropLastWhile { it !in " ,./-:();-_|" }.trim()
-    val firstPart = if (candidateFirstPart == "") {
+    val candidateFirstPart = text.take(width).dropLastWhile { it !in " ,./-:();-_|" }
+    val firstPart = candidateFirstPart.ifBlank {
         // AsNoTrackingWithIdentityResolu : so also break at camelcase break
         val camelCaseBreak = text.take(width).dropLastWhile { it.isLowerCase() }.dropLast(1)
         if (camelCaseBreak == "") throw IllegalArgumentException("Cannot split '$text'!")
         camelCaseBreak
-    } else candidateFirstPart
-    val secondPart = text.removePrefix(firstPart).trimStart()
-    return firstPart to secondPart
+    }
+    val secondPart = text.removePrefix(firstPart)
+    return firstPart.trim() to secondPart.trim()
 }

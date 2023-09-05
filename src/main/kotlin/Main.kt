@@ -32,7 +32,6 @@ fun updateOverview() {
 }
 
 fun analyze(file: File): FileSummary {
-
     val originalLines = file.readLines()
     val trimmedLines = originalLines.map { it.trim() }
 
