@@ -82,7 +82,8 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
         val statusCounts = sortedFileSummaries.groupingBy { it.completionStatus() }.eachCount()
         fun counts(status: Status) = statusCounts[status] ?: 0
 
-        title = "${sortedFileSummaries.size} exercises in total, ${counts(SUCCEEDED)} completed, " +
+        title = "CodingExerciser 1.02:" +
+                "${sortedFileSummaries.size} exercises in total, ${counts(SUCCEEDED)} completed, " +
                 "${counts(INCUBATING)} incubating, and ${counts(RETRY)} being trained on"
     }
 
@@ -201,6 +202,7 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
     }
 
     init {
+
         layout = GridBagLayout()
         add(searchText, searchTextConstraints)
         add(searchBox, searchBoxConstraints)
