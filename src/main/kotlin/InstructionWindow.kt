@@ -9,7 +9,7 @@ class InstructionWindow(fileSummary: FileSummary) : JFrame() {
     }
 
     private val solutionButton = JButton("Show a Solution").apply {
-        addActionListener { SolutionWindow(fileSummary) }
+        addActionListener { SolutionWindow(fileSummary, this@InstructionWindow) }
     }
 
     private val instructionConstraints = GridBagConstraints().apply {

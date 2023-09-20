@@ -14,18 +14,14 @@ front22("abc") → "ababcab"
 public class Front22 {
     public static void main(String[] args) {
         System.out.println(front22("kitten"));
-        System.out.println(front22("Ha") );
-        System.out.println(front22("abc") );
+        System.out.println(front22("Ha"));
+        System.out.println(front22("abc"));
     }
 
     private static String front22(String text) {
         // First figure the number of chars to take
-        int take = 2;
-        if (take > text.length()) {
-            take = text.length();
-        }
-
-        String front = text.substring(0, take);
+        int charsToTake = Math.min(text.length(), 2);
+        String front = text.substring(0, charsToTake);
         return front + text + front;
     }
 }

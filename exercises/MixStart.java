@@ -19,20 +19,6 @@ public class MixStart {
     }
 
     private static boolean mixStart(String text) {
-        // Check if string is too small
-        // (so substring() below does not go off the end)
-        if (text.length() < 3) return false;
-
-        // Pull out length 2 string for the "ix" part
-        // (i.e. substring starting at index 1 and stopping just before 3).
-        String two = text.substring(1, 3);
-
-        if (two.equals("ix")) {
-            return true;
-        } else {
-            return false;
-        }
-        // This last part can be shortened to just:
-        // return(two.equals("ix"));
+        return text.startsWith("ix", 1);
     }
 }

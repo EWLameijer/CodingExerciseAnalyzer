@@ -7,17 +7,23 @@ import javax.swing.JButton
 import javax.swing.JFrame
 import javax.swing.JTextArea
 
-class SolutionWindow(fileSummary: FileSummary) : JFrame() {
+class SolutionWindow(private val fileSummary: FileSummary, private val parent: InstructionWindow) : JFrame() {
     private val solution = JTextArea(fileSummary.code()).apply {
         font = Font("Consolas", Font.PLAIN, 14)
     }
-    
+
     private val iDidItButton = JButton("I did it!").apply {
-        addActionListener { StatusManager.updateDone(fileSummary.filename) }
+        addActionListener { buttonAction(StatusManager::updateDone) }
     }
 
     private val iShouldTryAgainLater = JButton("I should try again later...").apply {
-        addActionListener { StatusManager.updateTryAgainLater(fileSummary.filename) }
+        addActionListener { buttonAction(StatusManager::updateTryAgainLater) }
+    }
+
+    private fun buttonAction(action: (String) -> Unit) {
+        action(fileSummary.filename)
+        parent.dispose()
+        dispose()
     }
 
     private val solutionConstraints = GridBagConstraints().apply {
@@ -53,6 +59,7 @@ class SolutionWindow(fileSummary: FileSummary) : JFrame() {
         add(iDidItButton, iDidItButtonConstraints)
         add(iShouldTryAgainLater, iShouldTryAgainLaterButtonConstraints)
         size = Dimension(500, 500)
+        defaultCloseOperation = EXIT_ON_CLOSE
         isVisible = true
     }
 }
