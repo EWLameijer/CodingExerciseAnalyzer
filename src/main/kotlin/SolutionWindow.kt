@@ -3,8 +3,11 @@ import java.awt.Font
 import java.awt.GridBagConstraints
 import java.awt.GridBagLayout
 import java.awt.Insets
+import java.awt.event.WindowAdapter
+import java.awt.event.WindowEvent
 import javax.swing.JButton
 import javax.swing.JFrame
+import javax.swing.JOptionPane
 import javax.swing.JTextArea
 
 class SolutionWindow(private val fileSummary: FileSummary, private val parent: InstructionWindow) : JFrame() {
@@ -59,7 +62,12 @@ class SolutionWindow(private val fileSummary: FileSummary, private val parent: I
         add(iDidItButton, iDidItButtonConstraints)
         add(iShouldTryAgainLater, iShouldTryAgainLaterButtonConstraints)
         size = Dimension(500, 500)
-        defaultCloseOperation = EXIT_ON_CLOSE
         isVisible = true
+
+        addWindowListener(object : WindowAdapter() {
+            override fun windowClosing(windowEvent : WindowEvent) {
+                buttonAction(StatusManager::updateTryAgainLater)
+            }
+        })
     }
 }

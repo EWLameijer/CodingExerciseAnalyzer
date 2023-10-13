@@ -6,6 +6,7 @@ import javax.swing.JTextArea
 class InstructionWindow(fileSummary: FileSummary) : JFrame() {
     private val instructions = JTextArea(fileSummary.instruction().lineLengthLimited(80)).apply {
         font = Font("Consolas", Font.PLAIN, 14)
+        isEditable = false
     }
 
     private val solutionButton = JButton("Show a Solution").apply {

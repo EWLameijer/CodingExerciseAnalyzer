@@ -82,7 +82,7 @@ class OverviewWindow(fileSummaries: MutableList<FileSummary>) : JFrame() {
         val statusCounts = sortedFileSummaries.groupingBy { it.completionStatus() }.eachCount()
         fun counts(status: Status) = statusCounts[status] ?: 0
 
-        title = "CodingExerciser 1.02:" +
+        title = "CodingExerciser 1.04: " +
                 "${sortedFileSummaries.size} exercises in total, ${counts(SUCCEEDED)} completed, " +
                 "${counts(INCUBATING)} incubating, and ${counts(RETRY)} being trained on"
     }
