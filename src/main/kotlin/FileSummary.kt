@@ -48,7 +48,7 @@ data class FileSummary(
     override fun toString() = "filename: $filename, total: $total, blank: $blank, opening: $opening, " +
             "comments: $comments, code: $codeLines; $tags\n\n$description\n\n$code"
 
-    var completionStatus = Status.NOT_YET_TRIED
+    private var completionStatus = Status.NOT_YET_TRIED
 
     fun setCompletionStatus(line: String) {
         completionStatus = if (line.endsWith("!")) Status.SUCCEEDED

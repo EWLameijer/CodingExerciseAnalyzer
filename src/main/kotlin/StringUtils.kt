@@ -1,6 +1,6 @@
 fun String.lineLengthLimited(maxLineWidth: Int): String {
     fun toLines(text: String): List<String> {
-        if (text.length <= maxLineWidth) return listOf(text.trim())
+        if (text.length <= maxLineWidth) return listOf(text)
         val (firstLine, remainder) = splitBeforeIndex(text, maxLineWidth)
         return listOf(firstLine) + toLines(remainder)
     }
@@ -16,5 +16,5 @@ fun splitBeforeIndex(text: String, width: Int): Pair<String, String> {
         camelCaseBreak
     }
     val secondPart = text.removePrefix(firstPart)
-    return firstPart.trim() to secondPart.trim()
+    return firstPart to secondPart
 }

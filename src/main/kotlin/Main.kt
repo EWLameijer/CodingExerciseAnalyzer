@@ -2,6 +2,7 @@ import java.io.File
 
 const val statusFilename = "status.txt"
 val fileSummaries = mutableListOf<FileSummary>()
+val version = "1.0.5"
 
 var overview: OverviewWindow? = null
 
@@ -35,7 +36,7 @@ fun analyze(file: File): FileSummary {
     val originalLines = file.readLines()
     val trimmedLines = originalLines.map { it.trim() }
 
-    val (blankLines, nonBlankLines) = trimmedLines.partition { it.isEmpty() }
+    val (blankLines, nonBlankLines) = trimmedLines.partition { it.isBlank() }
     val numBlankLines = blankLines.size
     val (openingLines, otherLines) = nonBlankLines.span { it.isStartingLine() }
     val numOpeningLines = openingLines.size
